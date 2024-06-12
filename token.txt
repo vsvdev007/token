@@ -1,0 +1,17 @@
+https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+Step 1: Generate a Personal Access Token
+GitHub-Settings-Developer settings-Personal access tokens
+-Generate new token-name it- scopes-
+
+Step 2: Configure Git to Use the Token
+
+git config --global credential.helper '!f() { sleep 1; echo "username=git token=<TOKEN>"; }; f'
+
+git commit -am "Test commit"
+git push
+
+
+git clone https://<GITHUB_USERNAME>:<ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/eks-app-mesh-polyglot-demo.git $HOME/environment/eks-app-mesh-polyglot-demo && cd $HOME/environment/eks-app-mesh-polyglot-demo/workshop
+
+
+git clone https://<GITHUB_USERNAME>:<ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<repository>.git 
